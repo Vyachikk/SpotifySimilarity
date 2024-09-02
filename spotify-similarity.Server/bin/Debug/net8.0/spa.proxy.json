@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "C:\\Users\\Vyacheslav\\source\\repos\\spotify-similarity\\spotify-similarity.Server\\..\\spotify-similarity.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

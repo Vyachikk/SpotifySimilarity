@@ -1,0 +1,32 @@
+<div class="track-list-container">
+  <div *ngIf="tracks.length === 0 && !loading && !error">
+    <p>No tracks available.</p>
+  </div>
+
+  <div *ngIf="tracks.length > 0">
+    <div *ngFor="let track of tracks" (click)="viewTrack(track.id)" class="track-item">
+      <div class="track-cover">
+        <img [src]="track.coverUrl" alt="Track image" class="track-image">
+      </div>
+      <div class="track-info">
+        <h3 class="track-title">{{ track.trackName }}</h3>
+        <p class="track-artist">Artist: {{ track.artist }}</p>
+        <p class="track-streams">Streams: {{ track.spotifyStreams }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading">
+    <p class="loading-message">Loading more tracks...</p>
+  </div>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="page === 1">Previous</button>
+    <span>Page {{ page }}</span>
+    <button (click)="nextPage()" [disabled]="tracks.length < pageSize">Next</button>
+  </div>
+
+  <div *ngIf="error">
+    <p class="error-message">{{ error }}</p>
+  </div>
+</div>

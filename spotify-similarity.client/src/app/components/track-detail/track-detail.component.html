@@ -1,0 +1,68 @@
+<div class="track-detail-container">
+  <div *ngIf="track; else loadingTemplate">
+    <h2 class="track-title">{{ track.trackName }}</h2>
+    <div class="track-info">
+      <p class="track-artist">Artist: {{ track.artist }}</p>
+      <p class="track-album">Album: {{ track.albumName }}</p>
+      <p class="track-release-date">Release Date: {{ track.releaseDate }}</p>
+    </div>
+    <div class="track-cover">
+      <img [src]="track.coverUrl" alt="Track image" class="track-image">
+    </div>
+
+    <div *ngIf="track.previewUrl" class="track-audio">
+      <h3>Preview</h3>
+      <audio #audio controls *ngIf="track.previewUrl">
+        <source [src]="track.previewUrl" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <h2>Similar Tracks</h2>
+    <div>
+      <label for="xMetric">X Axis Metric:</label>
+      <select id="xMetric" [(ngModel)]="xMetric">
+        <option value="spotifyStreams">Spotify Streams</option>
+        <option value="allTimeRank">All Time Rank</option>
+        <option value="spotifyPopularity">Spotify Popularity</option>
+        <option value="youTubeViews">YouTube Views</option>
+        <option value="trackScore">Spotify Score</option>
+      </select>
+    </div>
+    <div>
+      <label for="yMetric">Y Axis Metric:</label>
+      <select id="yMetric" [(ngModel)]="yMetric">
+        <option value="spotifyStreams">Spotify Streams</option>
+        <option value="allTimeRank">All Time Rank</option>
+        <option value="spotifyPopularity">Spotify Popularity</option>
+        <option value="youTubeViews">YouTube Views</option>
+        <option value="trackScore">Spotify Score</option>
+      </select>
+    </div>
+
+    <app-track-visualization [tracks]="similarTracks" [xMetric]="xMetric" [yMetric]="yMetric"></app-track-visualization>
+
+    <h2>Recommendations</h2>
+    <div class="recommendations" *ngIf="recommendations.length">
+      <div *ngFor="let rec of recommendations" class="recommendation">
+        <img [src]="rec.coverUrl" alt="Cover" class="recommendation-image">
+        <div class="recommendation-details">
+          <p>{{ rec.trackName }} - {{ rec.artist }}</p>
+          <audio controls *ngIf="rec.previewUrl">
+            <source [src]="rec.previewUrl" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!recommendations.length">
+      <p>No recommendations available.</p>
+    </div>
+  </div>
+  <ng-template #loadingTemplate>
+    <p class="loading-message">Loading track details...</p>
+  </ng-template>
+  <div *ngIf="error">
+    <p class="error-message">{{ error }}</p>
+  </div>
+</div>

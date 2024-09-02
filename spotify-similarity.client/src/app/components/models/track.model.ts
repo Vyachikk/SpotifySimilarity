@@ -1,0 +1,35 @@
+export interface Track {
+  id: number;
+  trackName: string;
+  albumName: string;
+  artist: string;
+  releaseDate: string;
+  isrc: string;
+  allTimeRank: number;
+  trackScore: number;
+  spotifyStreams: number;
+  spotifyPlaylistCount: number;
+  spotifyPlaylistReach: number;
+  spotifyPopularity: number;
+  youTubeViews: number;
+  youTubeLikes: number;
+  tikTokPosts: number;
+  tikTokLikes: number;
+  tikTokViews: number;
+  youTubePlaylistReach: number;
+  appleMusicPlaylistCount: number;
+  airPlaySpins: number;
+  siriusXMSpins: number;
+  deezerPlaylistCount: number;
+  deezerPlaylistReach: number;
+  amazonPlaylistCount: number;
+  pandoraStreams: number;
+  pandoraTrackStations: number;
+  soundcloudStreams: number;
+  shazamCounts: number;
+  tidalPopularity: number;
+  explicitTrack: boolean;
+  spotifyId?: string;
+  coverUrl?: string;
+  previewUrl?: string;
+}

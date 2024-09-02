@@ -1,0 +1,12 @@
+<div class="chart-container">
+  <canvas #canvas (wheel)="onCanvasWheel($event)" (mousedown)="onCanvasMouseDown($event)" (mouseup)="onCanvasMouseUp($event)" (mousemove)="onCanvasMouseMove($event)" (mouseleave)="onCanvasMouseLeave($event)" (click)="onCanvasClick($event)"></canvas>
+  <div class="x-axis-label">{{ xMetric }}</div>
+  <div class="y-axis-label">{{ yMetric }}</div>
+</div>
+<div class="tooltip" *ngIf="tooltipVisible" [style.top.px]="tooltipY" [style.left.px]="tooltipX">
+  <img [src]="tooltipTrack?.coverUrl" alt="Cover" />
+  <div>{{ tooltipTrack?.trackName }}</div>
+  <div>Artist: {{ tooltipTrack?.artist }}</div>
+  <div>Streams: {{ tooltipTrack?.spotifyStreams }}</div>
+  <div>Score: {{ tooltipTrack?.trackScore }}</div>
+</div>

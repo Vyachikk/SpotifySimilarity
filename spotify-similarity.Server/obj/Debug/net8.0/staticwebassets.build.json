@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "V1MQ2uBBRWx4Ad56lDO3YX0elbLNZX6VBvAmRApY6Zw=",
+  "Source": "spotify-similarity.Server",
+  "BasePath": "_content/spotify-similarity.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Vyacheslav\\source\\repos\\spotify-similarity\\spotify-similarity.client\\spotify-similarity.client.esproj",
+      "Version": 2,
+      "Source": "spotify-similarity.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

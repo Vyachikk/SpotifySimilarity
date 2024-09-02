@@ -1,0 +1,1 @@
+C:\Users\Vyacheslav\source\repos\spotify-similarity\spotify-similarity.client\obj\Debug\spotify-similarity.client.esproj.CoreCompileInputs.cache
